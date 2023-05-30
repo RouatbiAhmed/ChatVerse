@@ -43,6 +43,9 @@ dependencies:
   cached_network_image: ^3.2.3
   image_picker: ^0.8.6+2
   firebase_storage: ^11.0.13
+  emoji_picker_flutter: ^1.5.2
+  firebase_messaging: ^14.4.0
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +74,8 @@ flutter:
     - images/images/
     - images/camera.png
     - images/add_image.png
+    - images/Chating-logo-by-meisuseno-580x446-removebg-preview.png
+    - images/google.png
 
  
 

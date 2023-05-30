@@ -72,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
       //app bar
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: const Text('Welcome to We Chat'),
+        title: const Text('Welcome to ChatVerse'),
       ),
 
       //body
@@ -84,6 +84,17 @@ class _LoginScreenState extends State<LoginScreen> {
             width: mq.width * .5,
             duration: const Duration(seconds: 1),
             child: Image.asset('images/icon.png')),*/
+
+                 //app logo
+        Positioned(
+            top: mq.height * .18,
+            right: mq.width * .10,
+            width: mq.width * .8,
+            child: Image.asset("images/Chating-logo-by-meisuseno-580x446-removebg-preview.png")),
+          
+
+       
+
 
         //google login button
         Positioned(
@@ -98,8 +109,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     elevation: 1),
                     onPressed: () { _handleGoogleBtnClick();},
                 //google icon
-                icon: const Icon(Icons.login),
-                // Image.asset('images\google.png', height: mq.height * .03),
+                icon: Image.asset('images/google.png', height: mq.height * .03),
+                // Image.asset('images/google.png', height: mq.height * .03),
 
                 //login with google label
                 label: RichText(

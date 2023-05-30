@@ -20,7 +20,8 @@ import '../main.dart';
 
 
 class ProfileScreen extends StatefulWidget {
-  final ChatUser user;
+  final ChatUser user; //cette instance aura les valeur depuis linstance me laursque on la passe en parametre dans materialpageroute
+  
   const ProfileScreen({super.key, required String title, required this.user});
 
   @override

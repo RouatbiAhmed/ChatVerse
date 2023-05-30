@@ -1,16 +1,13 @@
 import 'dart:developer';
-
 import 'package:chat_app/api/apis.dart';
 import 'package:chat_app/home_screen.dart';
 import 'package:chat_app/wigets/chat_user_card.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import '../../main.dart';
-
 import 'auth/login_screen.dart';
-//import 'home_screen.dart';
+
 
 //splash screen
 class SplashScreen extends StatefulWidget {
@@ -25,6 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 2), () {
+
       //exit full-screen
       SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
       SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -35,12 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
       if (APIs.auth.currentUser != null) {
         log('\nUser: ${APIs.auth.currentUser}');
         // Go to home screen
-        Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-                builder: (_) => const HomeScreen(
-                      title: '"we chatt',
-                    )));
+        Navigator.pushReplacement(context,MaterialPageRoute(builder: (_) => const HomeScreen(title: 'ChatVerse')));
       } else {
         //Go to loginscreen
         Navigator.pushReplacement(
@@ -59,19 +52,18 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Stack(children: [
         //app logo
         Positioned(
-            top: mq.height * .15,
-            right: mq.width * .25,
-            width: mq.width * .5,
-            child: const Text('❤️')),
+            top: mq.height * .18,
+            right: mq.width * .10,
+            width: mq.width * .8,
+            child: Image.asset("images/Chating-logo-by-meisuseno-580x446-removebg-preview.png")),
 
         //google login button
         Positioned(
             bottom: mq.height * .15,
             width: mq.width,
-            child: const Text('MADE IN INDIA WITH ❤️',
+            child: const Text('Unlock the Power of Connection',
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 16, color: Colors.black87, letterSpacing: .5))),
+                style: TextStyle(fontSize: 16, color: Colors.black87, letterSpacing: .5))),
       ]),
     );
   }
